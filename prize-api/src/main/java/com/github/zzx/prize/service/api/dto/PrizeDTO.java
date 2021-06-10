@@ -1,6 +1,9 @@
 package com.github.zzx.prize.api.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,6 +14,9 @@ import java.util.List;
  * @date 2021/6/10 上午9:05
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class PrizeDTO implements Serializable {
 
     private static final long serialVersionUID = 9175407791086482034L;
@@ -27,5 +33,4 @@ public class PrizeDTO implements Serializable {
     private String updater;
 
     List<PrizeRuleDTO> prizeRules;
-    List<PrizeMetaInfo> prizeMetaInfos;
 }

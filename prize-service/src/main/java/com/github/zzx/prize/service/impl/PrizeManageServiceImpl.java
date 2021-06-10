@@ -1,4 +1,4 @@
-package com.github.zzx.prize.service.service.impl;
+package com.github.zzx.prize.service.impl;
 
 import com.github.zzx.prize.api.dto.CommonResponse;
 import com.github.zzx.prize.api.dto.PrizeDTO;

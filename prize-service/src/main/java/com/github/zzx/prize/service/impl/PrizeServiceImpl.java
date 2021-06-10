@@ -1,4 +1,4 @@
-package com.github.zzx.prize.service.service.impl;
+package com.github.zzx.prize.service.impl;
 
 import com.github.zzx.prize.api.dto.CommonResponse;
 import com.github.zzx.prize.api.dto.req.QueryPrizeReqDTO;
@@ -51,6 +51,23 @@ public class PrizeServiceImpl implements PrizeService {
 
     @Override
     public CommonResponse<List<SendPrizeResp>> queryPrize(QueryPrizeReqDTO queryPrizeReqDTO) {
-        return null;
+        logger.info("prizeService queryPrize enter. queryPrizeReqDTO = {}", queryPrizeReqDTO);
+        CommonResponse<List<SendPrizeResp>> response = new CommonResponse<>();
+        try {
+            PrizeChecker.checkQueryPrizeReqDTO(queryPrizeReqDTO);
+            response = prizeBizService.queryPrize(queryPrizeReqDTO);
+            logger.info("prizeService queryPrize end. resp = {}", response);
+            return response;
+        } catch (IllegalArgumentException iae) {
+            logger.warn("prizeService queryPrize param error. queryPrizeReqDTO = {}", queryPrizeReqDTO, iae);
+            return response.fail(RespCodeEnum.PARAM_ERROR);
+        } catch (PrizeBizException pbe) {
+            logger.error("prizeService queryPrize biz error. queryPrizeReqDTO = {}", queryPrizeReqDTO, pbe);
+            return response.fail(pbe.getCode(), pbe.getMsg());
+        } catch (Exception e) {
+            logger.error("prizeService queryPrize system error. queryPrizeReqDTO = {}", queryPrizeReqDTO, e);
+            return response.fail(RespCodeEnum.SYSTEM_ERROR);
+        }
+
     }
 }

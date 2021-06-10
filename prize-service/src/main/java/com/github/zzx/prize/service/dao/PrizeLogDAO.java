@@ -17,5 +17,7 @@ public interface PrizeLogDAO {
 
     List<PrizeLogDO> selectByUserIdAndPrizeId(Long userId, Long prizeId);
 
+    PrizeLogDO selectByUnique(String uniqueKey);
+
     boolean update(PrizeLogDO prizeLog);
 }

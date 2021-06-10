@@ -1,6 +1,7 @@
 package com.github.zzx.prize.service.dal.mapper;
 
 import com.github.zzx.prize.service.dal.entity.PrizeRuleDO;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

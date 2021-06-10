@@ -1,6 +1,7 @@
 package com.github.zzx.prize.service.dal.mapper;
 
 import com.github.zzx.prize.service.dal.entity.PrizeLogDO;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface PrizeLogMapper {
     List<PrizeLogDO> selectByUserAndPrizeId(Long userId,Long prizeId);
 
     int update(PrizeLogDO prizeLog);
+
+    PrizeLogDO selectByUnique(String uniqueKey);
 }

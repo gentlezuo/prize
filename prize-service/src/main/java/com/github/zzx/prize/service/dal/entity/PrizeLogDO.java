@@ -19,6 +19,7 @@ public class PrizeLogDO {
     private Long id;
     private Long prizeId;
     private Long userId;
+    private String uniqueKey;
     private Integer status;
     private String detail;
     private String memo;

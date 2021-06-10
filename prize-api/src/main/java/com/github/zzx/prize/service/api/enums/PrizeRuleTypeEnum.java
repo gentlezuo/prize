@@ -11,8 +11,8 @@ public enum PrizeRuleTypeEnum {
     USS(2, "用户画像"),
     RULE_ENGINE(3, "规则引擎");
 
-    private final Integer code;
-    private final String desc;
+    public final Integer code;
+    public final String desc;
 
     PrizeRuleTypeEnum(Integer code, String desc) {
         this.code = code;

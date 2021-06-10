@@ -1,5 +1,6 @@
 package com.github.zzx.prize.service.util;
 
+import com.github.zzx.prize.api.dto.req.QueryPrizeReqDTO;
 import com.github.zzx.prize.api.dto.req.SendPrizeReqDTO;
 import com.google.common.base.Preconditions;
 import org.apache.logging.log4j.util.Strings;
@@ -22,5 +23,11 @@ public class PrizeChecker {
 
     public static <T> void checkNotNull(T t) {
         Preconditions.checkNotNull(t, "param should not be null");
+    }
+
+    public static void checkQueryPrizeReqDTO(QueryPrizeReqDTO queryPrizeReqDTO) {
+        checkNotNull(queryPrizeReqDTO);
+        Preconditions.checkArgument(queryPrizeReqDTO.getPrizeId()!=null&&queryPrizeReqDTO.getPrizeId()>0,"prizeId should not be null and gt 0");
+        Preconditions.checkArgument(queryPrizeReqDTO.getUserId()!=null&&queryPrizeReqDTO.getUserId()>0,"userId should not be null nad gt 0");
     }
 }

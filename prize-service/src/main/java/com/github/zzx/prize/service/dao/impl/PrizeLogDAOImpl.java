@@ -35,6 +35,11 @@ public class PrizeLogDAOImpl implements PrizeLogDAO {
     }
 
     @Override
+    public PrizeLogDO selectByUnique(String uniqueKey) {
+        return prizeLogMapper.selectByUnique(uniqueKey);
+    }
+
+    @Override
     public boolean update(PrizeLogDO prizeLog) {
         return prizeLogMapper.update(prizeLog)>0;
     }

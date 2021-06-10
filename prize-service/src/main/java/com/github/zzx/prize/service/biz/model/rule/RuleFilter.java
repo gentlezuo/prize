@@ -1,5 +1,6 @@
 package com.github.zzx.prize.service.biz.model.rule;
 
+import com.github.zzx.prize.api.dto.PrizeRuleDTO;
 import com.github.zzx.prize.service.biz.model.ExecuteContext;
 
 /**
@@ -9,5 +10,5 @@ import com.github.zzx.prize.service.biz.model.ExecuteContext;
  */
 public interface RuleFilter {
 
-    boolean filter(ExecuteContext executeContext);
+    boolean filter(ExecuteContext executeContext, PrizeRuleDTO prizeRuleDTO);
 }

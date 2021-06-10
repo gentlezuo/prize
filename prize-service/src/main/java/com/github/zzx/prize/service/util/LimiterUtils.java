@@ -11,7 +11,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class LimiterUtils {
 
-
     private static ConcurrentHashMap<Long, RateLimiter> sendPrizeLimiterMap = new ConcurrentHashMap<>();
 
     public static RateLimiter getLimiter(Long prizeId) {
